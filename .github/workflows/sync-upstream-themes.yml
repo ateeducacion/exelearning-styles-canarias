@@ -1,8 +1,8 @@
-name: Sincronizar temas upstream
+name: Sincronizar estilos upstream
 
 # Comprueba periódicamente la rama main de exelearning/exelearning y, si los
-# temas Flux o Nova han cambiado, abre un Pull Request para traer esos cambios
-# a este repositorio. El tema REF es propio y no se sincroniza.
+# estilos Flux o Nova han cambiado, abre un Pull Request para traer esos cambios
+# a este repositorio. El estilo REF es propio y no se sincroniza.
 
 on:
   schedule:
@@ -25,7 +25,7 @@ jobs:
       - name: Checkout de este repositorio
         uses: actions/checkout@v6
 
-      - name: Descargar temas desde upstream (sparse checkout)
+      - name: Descargar estilos desde upstream (sparse checkout)
         run: |
           set -euo pipefail
           rm -rf .upstream
@@ -36,7 +36,7 @@ jobs:
           for t in ${THEMES}; do paths="${paths} ${UPSTREAM_PATH}/${t}"; done
           git sparse-checkout set ${paths}
 
-      - name: Copiar temas a su ubicación
+      - name: Copiar estilos a su ubicación
         run: |
           set -euo pipefail
           for t in ${THEMES}; do
@@ -56,7 +56,7 @@ jobs:
           set -euo pipefail
           if git diff --quiet -- ${THEMES}; then
             echo "changed=false" >> "${GITHUB_OUTPUT}"
-            echo "Sin cambios en los temas; no se abrirá PR."
+            echo "Sin cambios en los estilos; no se abrirá PR."
           else
             echo "changed=true" >> "${GITHUB_OUTPUT}"
             {
@@ -73,17 +73,17 @@ jobs:
           base: main
           branch: sync/temas-upstream
           delete-branch: true
-          commit-message: "Sincronizar temas Flux y Nova desde exelearning/exelearning"
-          title: "Sincronizar temas Flux y Nova desde upstream"
+          commit-message: "Sincronizar estilos Flux y Nova desde exelearning/exelearning"
+          title: "Sincronizar estilos Flux y Nova desde upstream"
           labels: |
             automated
             themes
           body: |
-            Actualización automática de los temas **Flux** y **Nova** desde
+            Actualización automática de los estilos **Flux** y **Nova** desde
             [`${{ env.UPSTREAM_REPO }}@main`](https://github.com/exelearning/exelearning/tree/main/public/files/perm/themes/base).
 
             Generado por el workflow `sync-upstream-themes.yml` (ejecución semanal o manual).
-            El tema **REF** es propio y no se sincroniza.
+            El estilo **REF** es propio y no se sincroniza.
 
             ### Ficheros cambiados
             ```
