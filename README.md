@@ -2,7 +2,7 @@
 
 Temas (estilos) oficiales de **[eXeLearning](https://exelearning.net/)** para los centros educativos de Canarias.
 
-Este repositorio lo mantiene el **[Área de Tecnología Educativa (ATE)](https://www3.gobiernodecanarias.org/medusa/ecoescuela/ate/)**, departamento de la Dirección General de Ordenación de las Enseñanzas, Inclusión e Innovación de la Consejería de Educación, Formación Profesional, Actividad Física y Deportes del Gobierno de Canarias. El ATE impulsa la competencia digital, el pensamiento computacional, los recursos educativos abiertos y la transformación digital en los centros escolares canarios.
+Este repositorio lo mantiene el **[Área de Tecnología Educativa (ATE)](https://www3.gobiernodecanarias.org/medusa/ecoescuela/ate/)**, departamento de la Dirección General de Ordenación de las Enseñanzas, Inclusión e Innovación de la Consejería de Educación, Formación Profesional, Actividad Física y Deportes del Gobierno de Canarias. ATE impulsa la competencia digital, el pensamiento computacional, los recursos educativos abiertos y la transformación digital en los centros escolares canarios.
 
 ## Temas disponibles
 
