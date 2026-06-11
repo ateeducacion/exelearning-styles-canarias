@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout de este repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Descargar temas desde upstream (sparse checkout)
         run: |
