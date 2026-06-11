@@ -1,4 +1,4 @@
-# exelearning-themes-canarias
+# exelearning-styles-canarias
 
 Temas (estilos) oficiales de **[eXeLearning](https://exelearning.net/)** para los centros educativos de Canarias.
 
