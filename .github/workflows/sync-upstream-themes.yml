@@ -1,0 +1,93 @@
+name: Sincronizar temas upstream
+
+# Comprueba periódicamente la rama main de exelearning/exelearning y, si los
+# temas Flux o Nova han cambiado, abre un Pull Request para traer esos cambios
+# a este repositorio. El tema REF es propio y no se sincroniza.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # cada lunes a las 06:00 UTC
+  workflow_dispatch: {} # permite lanzarlo manualmente desde la pestaña Actions
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  UPSTREAM_REPO: exelearning/exelearning
+  UPSTREAM_PATH: public/files/perm/themes/base
+  THEMES: flux nova
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout de este repositorio
+        uses: actions/checkout@v4
+
+      - name: Descargar temas desde upstream (sparse checkout)
+        run: |
+          set -euo pipefail
+          rm -rf .upstream
+          git clone --depth 1 --filter=blob:none --sparse \
+            "https://github.com/${UPSTREAM_REPO}.git" .upstream
+          cd .upstream
+          paths=""
+          for t in ${THEMES}; do paths="${paths} ${UPSTREAM_PATH}/${t}"; done
+          git sparse-checkout set ${paths}
+
+      - name: Copiar temas a su ubicación
+        run: |
+          set -euo pipefail
+          for t in ${THEMES}; do
+            src=".upstream/${UPSTREAM_PATH}/${t}"
+            if [ ! -d "${src}" ]; then
+              echo "::error::No se encontró ${src} en ${UPSTREAM_REPO}"
+              exit 1
+            fi
+            rm -rf "${t}"
+            cp -R "${src}" "${t}"
+          done
+          rm -rf .upstream
+
+      - name: Detectar cambios
+        id: changes
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- ${THEMES}; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+            echo "Sin cambios en los temas; no se abrirá PR."
+          else
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+            {
+              echo "summary<<__EOF__"
+              git diff --stat -- ${THEMES}
+              echo "__EOF__"
+            } >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Crear Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base: main
+          branch: sync/temas-upstream
+          delete-branch: true
+          commit-message: "Sincronizar temas Flux y Nova desde exelearning/exelearning"
+          title: "Sincronizar temas Flux y Nova desde upstream"
+          labels: |
+            automated
+            themes
+          body: |
+            Actualización automática de los temas **Flux** y **Nova** desde
+            [`${{ env.UPSTREAM_REPO }}@main`](https://github.com/exelearning/exelearning/tree/main/public/files/perm/themes/base).
+
+            Generado por el workflow `sync-upstream-themes.yml` (ejecución semanal o manual).
+            El tema **REF** es propio y no se sincroniza.
+
+            ### Ficheros cambiados
+            ```
+            ${{ steps.changes.outputs.summary }}
+            ```
+
+            > Revisa el diff antes de mezclar para confirmar que los cambios encajan con este repositorio.
