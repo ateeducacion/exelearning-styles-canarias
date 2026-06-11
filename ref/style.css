@@ -1,0 +1,2124 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("OpenSans"), url(fonts/opensans-regular.woff2) format("woff2"),
+        url(fonts/opensans-regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: "OpenSans";
+    font-style: italic;
+    font-weight: 400;
+    src: local("OpenSans Italic"), url(fonts/opensans-italic.woff2) format("woff2"),
+        url(fonts/opensans-italic.woff) format("woff");
+}
+
+@font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("OpenSans Bold"), url(fonts/opensans-bold.woff2) format("woff2"),
+        url(fonts/opensans-bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: "OpenSans";
+    font-style: italic;
+    font-weight: 700;
+    src: local("OpenSans Bold Italic"),
+        url(fonts/opensans-bolditalic.woff2) format("woff2"),
+        url(fonts/opensans-bolditalic.woff) format("woff");
+}
+
+.page-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.exe-scorm .page header .package-title,
+.exe-single-page .package-header h1 {
+    width: 100%;
+}
+
+.package-header:has(.package-subtitle) .package-title,
+.main-header:has(.package-subtitle) .package-title {
+    position: relative;
+    top: -10px;
+}
+
+.package-subtitle {
+    width: 100%;
+    position: absolute;
+    left: 30px;
+    bottom: -.2em;
+    font-size: .9em;
+    color: #FFF;
+}
+
+.exe-web-site .package-subtitle {
+    left: 80px;
+}
+
+main header:not(#head) {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+}
+
+.exe-web-site main.page {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 300px;
+    padding-bottom: 40px;
+}
+
+.exe-scorm .page > header .package-title,
+.exe-scorm .siteNav-off .page > header .package-title,
+.exe-ims .page > header .package-title,
+.exe-ims .siteNav-off .page > header .package-title,
+.exe-epub .page > header .package-title,
+.exe-epub .siteNav-off .page > header .package-title,
+.exe-ims .page > header .package-title {
+    width: 100%;
+}
+
+.exe-scorm .page > header,
+.exe-epub .page > header,
+.exe-ims .page > header {
+    display: block !important;
+}
+
+.page > header {
+    position: fixed;
+    top: 4px;
+    right: 4px;
+    left: 4px;
+    z-index: 400;
+    height: 82px;
+    display: flex !important;
+    align-items: center;
+    background: #1c1c1c;
+    border-radius: 12px;
+}
+
+.page > header .package-title,
+.siteNav-off .page > header .package-title,
+.exe-single-page .package-header h1 {
+    padding-left: 80px;
+    width: calc(100% - 470px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    margin: 0;
+}
+.exe-single-page .package-header h1 {
+    padding-left: 30px;
+}
+
+body.exe-export {
+    padding: 1em 0;
+}
+
+body.exe-web-site {
+    padding: 0;
+}
+
+body.exe-scorm .package-title,
+body.exe-ims .package-title,
+body.exe-epub .package-title{
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-weight: normal;
+    font-size: .95em;
+    color: #DDD;
+    padding-left: 32px;
+}
+
+.exe-web-site .package-header {
+    width: 100%;
+}
+
+body.exe-scorm:has(.package-subtitle) .page-title,
+body.exe-ims:has(.package-subtitle) .page-title,
+body.exe-epub:has(.package-subtitle) .page-title{
+    margin-top: 30px;
+    color: #fff;
+}
+
+body.exe-scorm .page-counter,
+body.exe-ims .page-counter,
+body.exe-epub .page-counter{
+    position: absolute;
+    top: 15px;
+    right: 32px;
+}
+
+body.exe-scorm #teacher-mode-toggler-wrapper,
+body.exe-ims #teacher-mode-toggler-wrapper,
+body.exe-epub #teacher-mode-toggler-wrapper{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+body.exe-single-page #teacher-mode-toggler-wrapper {
+    position: fixed;
+    top: 0;
+    right:20px;
+    z-index: 1000;
+}
+
+body.exe-scorm .package-title,
+body.exe-ims .package-title,
+body.exe-epub .package-title {
+    top: 15px !important;
+}
+body.exe-scorm:has(.package-subtitle) .package-title,
+body.exe-scorm:has(.package-subtitle) .package-title,
+body.exe-scorm:has(.package-subtitle) .package-title {
+    top: 10px !important;
+}
+body.exe-scorm .package-subtitle,
+body.exe-ims .package-subtitle,
+body.exe-epub .package-subtitle {
+    top: 28px;
+    font-size: .8em;
+    left: 32px;
+}
+body.exe-scorm .page-title,
+body.exe-ims .page-title,
+body.exe-epub .page-title {
+    padding: 0 32px;
+    position: absolute;
+    bottom: 5px;
+    color: #FFF;
+}
+body.exe-scorm:has(.package-subtitle) .page-title,
+body.exe-scorm:has(.package-subtitle) .page-title,
+body.exe-scorm:has(.package-subtitle) .page-title {
+    bottom: 0;
+}
+
+.exe-content a {
+    color: #00758f;
+}
+.exe-content a:hover,
+.exe-content a:focus {
+    color: #005771;
+    text-decoration: none;
+}
+
+/* Effects */
+.exe-accordion .fx-accordion-title, 
+.fx-pagination .fx-current a {
+    background-color:#005771;
+}
+.exe-fx a{
+    color: #1A718B;
+}
+.exe-fx a:hover,
+.exe-fx a:focus {
+    color: #338AA4;
+}
+
+.exe-download-package-link a {
+    background: #00758f;
+    color: #fff;
+}
+
+.exe-download-package-link a:hover {
+    background-color: #005771;
+    color: #fff;
+    text-decoration: none;
+}
+
+#node-content-container.exe-content #node-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: block;
+}
+
+.exe-content,
+body.exe-export {
+    font-family: "OpenSans";
+    font-weight: 400;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.js .exe-export .exe-content {
+    min-height: calc(100vh - 30px);
+}
+
+.js .in-iframe .exe-content {
+    min-height: 0;
+}
+
+.exe-content .package-title,
+.exe-single-page .package-header h1 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    color: #fff;
+}
+
+.exe-single-page .package-node {
+    margin-bottom: 3.5em;
+}
+
+.exe-content .box {
+    margin: 35px 0;
+    border: none;
+}
+
+.exe-web-site .exe-content .box {
+    margin: 40px 0;
+}
+
+.exe-content .box-head {
+    border-bottom: 0;
+    margin-bottom: 16px !important;
+}
+
+.exe-content .box-head + .box-content {
+    padding-top: 1em;
+}
+
+#node-content-container.exe-content .box {
+    border: 1px dotted #ddd;
+}
+#node-content-container.exe-content .box.hidden-idevices {
+    border-style: solid;
+}
+
+.exe-content .box header {
+    min-height: 60px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.exe-content .box-head .box-title {
+    color: #1c1c1c;
+    font-size: 1.75rem !important;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.exe-content .box-head .exe-icon {
+    float: left;
+}
+
+.exe-web-site .page-content,
+#exe-client-search,
+.exe-web-site main > header,
+.exe-web-site #siteFooterContent,
+.exe-export .exe-content {
+    max-width: 1280px;
+    padding: 0 90px;
+    margin: 0 auto;
+}
+
+.exe-web-site .exe-content {
+    max-width: none;
+    padding: 0;
+}
+
+body.exe-export.exe-scorm {
+    padding: 0;
+}
+
+.exe-export main {
+    padding-top: 1.5em;
+}
+.exe-scorm .exe-export main {
+    padding-top: 5em;
+    padding-bottom: 1em;
+}
+.exe-web-site main {
+    padding-top: 6em;
+}
+.exe-content.cover-on .exe-interactive-video,
+.exe-content .exe-interactive-video {
+    width: 100%;
+}
+.exe-export main {
+    padding-top: 6em;
+}
+.exe-web-site main {
+    padding-top: 6em;
+}
+
+body.exe-export.exe-scorm .exe-content,
+body.exe-export.exe-ims .exe-content,
+body.exe-export.exe-epub .exe-content {
+    padding: 0 40px;
+}
+
+/* siteNav */
+#siteNav {
+    float: left;
+    width: 300px;
+    padding-top: 20px;
+    padding-left: 8px;
+    padding-bottom: 20px;
+    background-color: #ffffff;
+    height: calc(100vh - 98px);
+    z-index: 1;
+    scrollbar-width: none;
+    transition: left 0.3s ease;
+    overflow: visible;
+    margin-top: 94px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    border-radius: 12px;
+}
+
+#siteNav::-webkit-scrollbar {
+    display: none;
+}
+
+#siteNav > ul {
+    max-height: 100%;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#siteNav > ul::-webkit-scrollbar {
+    display: none;
+}
+
+#siteNav .other-section {
+    display: none;
+}
+#sidebar-nav.fixed,
+#sidebar-nav {
+    position: fixed;
+}
+body.siteNav-off #siteNav {
+    display: none;
+}
+
+.exe-web-site #siteFooter {
+    padding-left: 320px;
+    padding-right: 20px;
+    transition: padding 0.3s ease;
+}
+.exe-web-site main.page {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 300px;
+    padding-bottom: 40px;
+    transition: padding 0.3s ease;
+}
+body.siteNav-off main.page,
+body.siteNav-off #siteFooter {
+    padding-left: 0;
+}
+#siteNav ul,
+#siteNav li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#siteNav li {
+    margin-bottom: 4px;
+}
+
+#siteNav a {
+    color: #000;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 8px;
+    max-width: 280px;
+    transition: background-color 0.5s ease;
+}
+
+#siteNav a.active {
+    color: #fff;
+    background-color: #00758f;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#siteNav a.highlighted-link {
+    color: #000;
+    margin-top: 10px;
+    background: #f1f1f1 url(img/book.svg) no-repeat 8px center;
+    padding-left: 42px;
+}
+
+#siteNav a.highlighted-link.active {
+    background: #00758f url(img/book_color.svg) no-repeat 8px center !important;
+    color: #fff;
+}
+
+#siteNav a.highlighted-link:hover {
+    background: #005771 url(img/book_color.svg) no-repeat 8px center !important;
+    color: #fff;
+}
+#siteNav a.highlighted-link:focus {
+    background: #00758f url(img/book_color.svg) no-repeat 8px center !important;
+    color: #fff;
+}
+
+#siteNav a.highlighted-link {
+    margin-top: 10px;
+}
+
+#siteNav a.highlighted-link:hover,
+#siteNav a.highlighted-link:focus {
+    background: #005771;
+}
+
+#siteNav a:hover {
+    background: #005771;
+    text-decoration: none;
+    color: #fff;
+}
+
+#siteNav ul ul a {
+    padding-left: 35px;
+    font-size: 0.95em;
+    background-color: #f2f2f7;
+}
+
+.current-page-parent a {
+    background-color: #f2f2f7;
+    margin-bottom: 4px;
+}
+
+#siteNav ul ul ul a {
+    padding-left: 55px;
+    font-size: 0.9em;
+}
+
+#siteNav ul ul ul ul a {
+    padding-left: 75px;
+}
+
+.daddy {
+    background: #fff url(img/arrow_down.svg) no-repeat right 16px center / 22px !important;
+}
+.active .active.daddy {
+    background: #005771 url(img/arrow_up_white.svg) no-repeat right 16px center /
+        22px !important;
+}
+.active .daddy {
+    background: #f2f2f7 url(img/arrow_down.svg) no-repeat right 16px center /
+        22px !important;
+}
+.current-page-parent .daddy {
+    background: #f2f2f7 url(img/arrow_down.svg) no-repeat right 16px center /
+        22px !important;
+}
+.daddy:hover {
+    background: #005771 url(img/arrow_down_white.svg) no-repeat right 16px
+        center / 22px !important;
+}
+.current-page-parent .daddy:hover {
+    background: #005771 url(img/arrow_down_white.svg) no-repeat right 16px
+        center / 22px !important;
+}
+.active.daddy:hover {
+    background: #005771 url(img/arrow_up_white.svg) no-repeat right 16px center /
+        22px !important;
+}
+
+/* pagination */
+.nav-buttons .nav-button,
+button.toggler {
+    position: fixed;
+    top: 15px;
+    right: 65px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-image: url(img/arrow_back.svg);
+    background-size: 24px;
+    background-color: #00758f;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    z-index: 999;
+    border: 0;
+    transition: background-color 0.5s ease;
+    padding: 18px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav-buttons span.nav-button {
+    opacity: 0.5;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+.nav-buttons .nav-button-left {
+    background-position: left 14px center;
+    padding-left: 48px;
+    right: 166px;
+}
+.nav-buttons .nav-button-right {
+    background-position: right 14px center;
+    padding-right: 48px;
+    background-image: url(img/arrow_forward.svg);
+    right: 30px;
+}
+
+button#siteNavToggler {
+    left: 14px;
+    top: 17px;
+    background: #fff url(img/menu_open.svg) no-repeat center center / 32px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    box-sizing: content-box;
+    padding: 8px;
+}
+#siteNavToggler:hover {
+    background-color: #f4f4f4;
+}
+button#siteNavToggler span,
+.siteNav-off button#siteNavToggler span {
+    display: none;
+}
+
+body.siteNav-off button#siteNavToggler {
+    left: 14px;
+    top: 17px;
+    background: url(img/menu_closed.svg) no-repeat center center / 32px;
+}
+
+body.siteNav-off button#siteNavToggler:hover {
+    background-color: #363636;
+}
+
+#siteNavToggler .sr-av {
+    visibility: visible;
+    position: static;
+    padding-left: 24px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.nav-buttons a:hover,
+.nav-buttons a:focus,
+button.toggler:hover,
+button.toggler:focus {
+    background-color: #005771;
+    border-color: #005771;
+    color: #fff;
+    text-decoration: none;
+}
+
+#exe-client-search-reset span,
+#packageLicense .license-label {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.box-toggle span {
+    display: none;
+}
+/* Box toggler */
+.box {
+    background-color: #ffffff;
+    border: 1px solid #eaecf0;
+    border-radius: 12px;
+    padding: 2.25rem;
+    margin-bottom: 32px;
+}
+
+.exe-export .box {
+    position: relative;
+}
+.exe-export .box-toggle {
+    width: 40px;
+    height: 40px;
+    background: url(img/arrow.svg);
+    background-size: auto 40px;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    transition: transform 0.2s ease-in-out;
+}
+.exe-export .box-head:hover .box-toggle,
+.exe-export .box-toggle:focus {
+    opacity: 1;
+}
+
+.exe-export .minimized .box-toggle {
+    transform: rotate(180deg);
+}
+
+#node-content-container.exe-content .box-head .exe-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+}
+
+#node-content-container.exe-content .box-head .exe-icon img {
+    height: 40px;
+}
+
+.exe-export .box-icon img {
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+.exe-export .box-icon img {
+    width: 40px;
+    height: auto;
+}
+
+.exe-export .box-title {
+    padding-top: 5px;
+}
+
+.exe-export .box.minimized .box-head {
+    border-bottom: 1px solid #ddd;
+}
+
+.exe-export .box.no-header.minimized .box-head {
+    border-color: #fff;
+}
+
+.exe-export .box.no-header .box-content {
+    background: none;
+    border: none;
+    padding: 20px 0;
+}
+
+/* Licenses */
+#packageLicense {
+    text-align: left;
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1em;
+    margin: 2.5em 0 2em 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+#packageLicense p {
+    margin: 0;
+}
+#packageLicense a {
+    color: #666;
+    text-transform: capitalize;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 15px;
+}
+#packageLicense a:hover,
+#packageLicense a:focus {
+    text-decoration: none;
+    color: #b04721;
+}
+#packageLicense.propietary {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    height: 0;
+}
+#packageLicense.cc {
+    padding: 0 20px 0 90px;
+    background: url(img/licenses.gif) no-repeat 0 0;
+}
+#packageLicense.cc-by-sa {
+    background-position: 0 -100px;
+}
+#packageLicensea.cc-by-nd {
+    background-position: 0 -200px;
+}
+#packageLicense.cc-by-nc {
+    background-position: 0 -300px;
+}
+#packageLicense.cc-by-nc-sa {
+    background-position: 0 -400px;
+}
+#packageLicense.cc-by-nc-nd {
+    background-position: 0 -500px;
+}
+#packageLicense.cc-0 {
+    background-position: 0 -600px;
+}
+/* Page footer */
+#siteUserFooter {
+    margin-bottom: 20px;
+}
+
+/* iDevice buttons */
+.exe-content .iDevice_buttons input,
+.exe-content .iDevice_buttons button {
+    background: #1a8fa9;
+    color: #fff;
+    border: 1px solid #1a8fa9;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: 0.5s ease;
+}
+.exe-content .iDevice_buttons input:hover,
+.exe-content .iDevice_buttons input:focus,
+.exe-content .iDevice_buttons button:hover,
+.exe-content .iDevice_buttons button:focus {
+    background: #005771;
+    border-color: #005771;
+}
+
+/* Page counter */
+.page-counter {
+    text-align: right;
+    margin: 0 0 0.5em 0;
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.exe-web-site .page-counter {
+    position: fixed;
+    right: 290px;
+    top: 58px;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    color: #fff;
+    text-align: right;
+}
+.exe-teacher-mode-toggler.exe-web-site .page-counter {
+    right: 400px;
+}
+
+/* Search bar */
+body.siteNav-off.exe-search-on button#searchBarTogger,
+body.exe-search-on button#searchBarTogger {
+    display: inline-block;
+}
+#exe-client-search-form p {
+    margin-top: 2em;
+}
+#exe-client-search-form p {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+button#searchBarTogger {
+    right: auto;
+    left: 304px;
+    top: 136px;
+    background: #C58D09 url(img/search.svg) no-repeat center / 32px;
+    width: 48px;
+    height: 48px;
+    display: none;
+    border-radius: 0 8px 8px 0;
+}
+body.siteNav-off button#searchBarTogger {
+    top: 136px;
+    left: 0px;
+    padding-left: 50px;
+    border-radius: 0 8px 8px 0;
+    display: none;
+}
+#exe-client-search {
+    display: none;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+#exe-client-search-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: inline;
+}
+#exe-client-search-submit {
+    text-indent: -999em;
+    background: #C58D09 url(img/icons.png) no-repeat -41px -1px;
+    background-size: auto 41px;
+    width: 45px;
+    height: 38px;
+    border: none;
+    border-radius: 4px;
+}
+#exe-client-search-reset.visible {
+    background: url(img/icons.png) no-repeat -242px -1px;
+    background-size: auto 40px;
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0.6;
+    border-radius: 4px;
+}
+#exe-client-search-reset:hover,
+#exe-client-search-reset:focus {
+    opacity: 1;
+}
+#exe-client-search-submit:hover,
+#exe-client-search-submit:focus {
+    background-color: #A77809;
+}
+#exe-client-search-results-list ul,
+#exe-client-search-results-list li {
+    margin: 2em 0;
+    padding: 0;
+    list-style: none;
+}
+#exe-client-search-results-list li {
+    margin: 0 0 1em 0;
+}
+#exe-client-search-results-list p {
+    margin-top: 2em;
+}
+
+/* Modo docente */
+
+#teacher-mode-toggler-wrapper {
+    float: none;
+    position: absolute;
+    top: 9px;
+    right: 300px;
+    display: flex;
+    align-items: center;
+    padding: 4px 36px 4px 4px;
+    margin: 0 10px 0 0;
+    height: 64px;
+    background-image: url(img/teacher_hat.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 28px;
+}
+#teacher-mode-toggler-wrapper .form-check-label {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+#teacher-mode-toggler-wrapper .form-check-input {
+    width: 2.6em;
+    height: 1.4em;
+}
+#teacher-mode-toggler-wrapper .form-check-input:checked {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}
+#teacher-mode-toggler-wrapper .form-check-input:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 0.25rem rgba(255, 204, 0, 0.25);
+}
+#teacher-mode-toggler-wrapper .form-check-input:focus {
+    background-image: url(img/switch.svg);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: left 1.6px center;
+}
+.mode-teacher #teacher-mode-toggler-wrapper .form-check-input:focus {
+    background-image: url(img/switch_white.svg);
+    background-position: right 1.6px center;
+}
+
+@media screen and (max-width: 1200px) {
+    body.cover-on #activity {
+        width: 100% !important;
+    }
+    #activity {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #activity #player {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-buttons .nav-button span {
+        display: none;
+    }
+
+    .nav-buttons .nav-button {
+        height: 60px;
+    }
+
+    .nav-buttons .nav-button-right {
+        right: 20px;
+        background-position: center;
+    }
+
+    .nav-buttons .nav-button-left {
+        right: 100px;
+        background-position: center;
+    }
+
+    .page > header .package-title,
+    .siteNav-off .page > header .package-title {
+        width: calc(100% - 240px);
+    }
+    .page-counter-label {
+        display: none;
+    }
+
+    /* Form & pagination*/
+    #teacher-mode-toggler-wrapper {
+        right: 182px;
+    }
+    #teacher-mode-toggler-wrapper:hover {
+        background-color: transparent;
+    }
+    #teacher-mode-toggler-wrapper .form-check-input {
+        margin: 0 !important;
+    }
+    .exe-web-site.exe-teacher-mode-toggler .page > header .package-title,
+    .exe-web-site.exe-teacher-mode-toggler.siteNav-off .page > header .package-title {
+        width: calc(100% - 330px);
+    }
+}
+
+/* Responsive design */
+@media screen and (max-width: 750px) {
+
+    body.exe-scorm .page-title,
+    body.exe-ims .page-title,
+    body.exe-epub .page-title {
+        padding: 0 24px;
+    }
+    body.exe-scorm .page > header .package-title,
+    body.exe-ims .page > header .package-title,
+    body.exe-epub .page > header .package-title {
+        padding-left: 24px;
+    }
+    body.exe-scorm .package-subtitle,
+    body.exe-ims .package-subtitle,
+    body.exe-epub .package-subtitle {
+        left: 24px;
+    }
+
+    .exe-web-site .page-content {
+        padding: 0 20px;
+    }
+
+    .exe-web-site .package-subtitle {
+        left: 32px;
+    }
+
+    #sidebar-nav {
+        position: static !important;
+        width: 100%;
+        padding: 190px 0 0 0;
+    }
+
+    #siteNav {
+        float: none;
+        width: 100%;
+        margin: 0;
+        background-color: #ffffff;
+        height: auto;
+        padding: 16px 16px 8px 16px;
+        border-radius: 0;
+    }
+    #siteNav a {
+        width: 100%;
+        max-width: none;
+    }
+    .exe-web-site main.page {
+        padding-left: 0;
+    }
+    .exe-web-site .exe-content .box {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    html {
+        font-size: 0.85rem !important;
+    }
+    .main-header:has(.package-subtitle) .package-title {
+        line-height: 1.1em;
+    }
+    .nav-buttons .nav-button-left,
+    .nav-buttons .nav-button-right {
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        top: 30px;
+    }
+    .nav-buttons .nav-button-left {
+        right: 70px;
+    }
+
+    .box-title {
+        width: calc(100% - 32px);
+    }
+    .exe-export .box-toggle {
+        background-position: center;
+        background-size: auto 32px;
+        width: 32px;
+        height: 32px;
+    }
+    .exe-single-page .package-header h1 {
+        padding-left: 32px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        width: 95%;
+        height: auto;
+        white-space: normal;
+    }
+
+    /* Teacher mode*/
+    #teacher-mode-toggler-wrapper {
+        right: 120px;
+    }
+    #teacher-mode-toggler-wrapper .form-check-input {
+        width: 2.5em;
+        height: 1.5em;
+    }
+    #teacher-mode-toggler-wrapper .form-check-input:focus {
+        background-size: 16px;
+    }
+    .exe-web-site.exe-teacher-mode-toggler .page > header .package-title,
+    .exe-web-site.exe-teacher-mode-toggler.siteNav-off .page > header .package-title {
+        width: calc(100% - 260px);
+    }
+    .exe-web-site .page-counter {
+        right: 127px;
+    }
+    .exe-teacher-mode-toggler.exe-web-site .page-counter {
+        right: 210px;
+    }
+
+    .exe-content .gridMap .exe-text-template div {
+        grid-template-columns: 1fr !important;
+    }
+
+    .exe-content .SPP-PuzzleSquare {
+        font-size: 3.5vw !important;
+    }
+
+    .exe-content .nav-buttons .nav-button-left {
+        right: 20px !important;
+        top: 10px !important;
+    }
+
+    .exe-content .nav-buttons .nav-button-right {
+        right: 20px !important;
+        top: 63px !important;
+    }
+}
+
+/* Table */
+
+table {
+    display: table;
+    border: 0;
+    height: fit-content !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 2em 0 !important;
+}
+
+@media print {
+    html body.exe-export {
+        background: #fff;
+    }
+    .exe-content {
+        color: #000;
+        padding: 0;
+    }
+    @page {
+        margin: 1.5cm;
+    }
+    #packageLicense.cc {
+        background: none;
+        padding-left: 0;
+    }
+    .exe-export .box-toggle {
+        display: none;
+    }
+    /* Website */
+    .exe-web-site #siteNav,
+    .exe-web-site .nav-buttons,
+    .exe-web-site button.toggler {
+        display: none;
+    }
+    .exe-web-site #siteFooter,
+    .exe-web-site main.page {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .exe-web-site main.page {
+        padding-top: 1em;
+    }
+    /* Single page */
+    body.exe-single-page #teacher-mode-toggler-wrapper {
+        display: none;
+    }
+}
+
+/* New style */
+
+.exe-content main.page {
+    background-color: #f0e3d1 !important;
+    background: url(img/patronfondo.png);
+}
+
+.exe-content .main-header {
+    background-color: #EFB734;
+    height: 93px;
+    top: 0px;
+    border-radius: 0px;
+    /* margin: 0px !important; */
+    left: 0px;
+    right: 0px;
+}
+
+.exe-content button#siteNavToggler {
+    border-radius: 40px;
+    background-color: #C58D09;
+}
+
+.exe-content button#siteNavToggler:hover {
+    background-color: #A77809;
+}
+
+.exe-content .nav-buttons .nav-button-right{
+    height: 60px;
+    width: 60px;
+    background-image: url(img/arrow_down.svg);
+    transform: rotate(270deg);
+    border-radius: 40PX;
+    background-position: right 15px center;
+    background-size: 30px;
+}
+
+.exe-content .nav-buttons .nav-button-left{
+    height: 60px;
+    width: 60px;
+    background-image: url(img/arrow_down.svg);
+    transform: rotate(90deg);
+    border-radius: 40PX;
+    background-position: right 15px center;
+    background-size: 30px;
+}
+
+.exe-content .nav-buttons .nav-button {
+    background-color: #C58D09;
+    padding: 0px !important;
+}
+
+.exe-content .nav-buttons .nav-button:hover {
+    background-color: #A77809;
+}
+
+.exe-content .nav-buttons span{
+    display: none;
+}
+
+.exe-content .fullWidth {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+}
+
+.exe-content .fullWidth .page-title, .exe-content .noDisplay {
+    display: none;
+}
+
+/* Credits change */
+
+.exe-content #packageLicense {
+    margin-bottom: 10px !important;
+}
+
+.exe-content #autorFooter {
+    color: #666666; 
+    font-size: 0.95em; 
+    margin-top: 0px; 
+    padding-top: 0px;
+}
+
+/* Logo Change */
+
+.exe-content .package-header {
+    width: 60%;
+    /*padding-left: 12%;*/
+    flex-direction: column;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.exe-content .package-title {
+    top: 0px !important;
+    overflow: none !important;
+    white-space: normal !important;
+    width: auto !important;
+    /*text-align: center;*/
+    padding-left: 0px !important;
+}
+
+.exe-content .package-subtitle {
+    position: relative;
+    width: auto !important;
+    margin-bottom: 0px !important;
+    /*text-align: center;*/
+    left: 0px !important;
+    /*font-size: 20px !important;*/
+    line-height: 1.2;
+}
+
+.exe-content header.main-header::before {
+    display: block;
+    width: 300px;
+    margin-left: 100px;
+    height: 60px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-color: white;
+    content: "";
+    background: url(img/logo_ref.svg);
+}
+
+/* Menu Change */
+
+.exe-content #siteNav {
+    width: 318px !important;
+    height: calc(100vh - 93px);
+    background-color: #F2D89C;
+    margin-top: 93px !important;
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+}
+
+.exe-content #siteNav a {
+    background-color: transparent !important
+}
+
+.exe-content #siteNav a.active {
+    background-color: #EFB734 !important;
+}
+
+.exe-content #siteNav .active li.sfout a {
+    background-color: #F1C252 !important;
+}
+
+.exe-content #siteNav a:hover {
+    background-color: #C58D09;
+}
+
+.exe-content #siteNav .daddy, .exe-content .active.daddy {
+    background: none !important;
+    display: grid;
+    grid-template-columns: 1fr 22px;
+    align-items: center;
+}
+
+.exe-content #siteNav .daddy::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url(img/arrow_down_white.svg) no-repeat;
+}
+
+.exe-content #siteNav .active.daddy::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url(img/arrow_down_white.svg) no-repeat;
+}
+
+.exe-content #sidebar-nav {
+    z-index: 1;
+}
+
+/* Portada */
+
+.exe-content .portada img {
+    width: 100% !important
+}
+
+.exe-content .portada .box-content {
+    background: none !important;
+    margin: 0px !important;
+    border: none !important;
+    padding: 0px !important;
+}
+
+.exe-content .portada header {
+    display: none !important;
+}
+
+.exe-content .portada {
+    background-color: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: -3px !important;
+}
+
+/* Page box */
+
+.exe-content .box-head {
+    margin-top: 5px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 2px solid #EFB734 !important;
+}
+
+.exe-content .box-toggle {
+    top: 10px !important;
+    right: 10px !important;
+}
+
+.exe-content .box-icon img {
+    margin-right: 20px !important;
+}
+
+.exe-content .box-content {
+    padding-top: 3em !important;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    font-size: 17px !important
+}
+
+.exe-content .exe-table-minimalist {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 4px 7px 10px 3px rgba(143,143,143,0.7) !important;
+}
+
+/*.exe-content .exe-table-minimalist tbody, .exe-content .exe-table-minimalist tr, .exe-content .exe-table-minimalist td {
+    display: block;
+}*/
+
+.exe-content .exe-table-minimalist td {
+    padding: 30px;
+    color: #333333;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+}
+
+/* Tablas */
+
+.exe-content .exe-table {
+    border: 0px solid;
+}
+
+.exe-content .exe-tabs .exe-table tr {
+    background-color: transparent !important;
+}
+
+.exe-content .exe-tabs .exe-table {
+    display: block !important;
+    overflow-x: auto;
+}
+
+.exe-content .exe-table td{
+    border-right: 2px solid white !important;
+}
+
+.exe-content .exe-table tr td {
+    vertical-align: baseline !important;
+}
+
+.exe-content .exe-table tr:first-child td {
+    vertical-align: middle !important;
+}
+
+.exe-content .exe-table td:last-child{
+    border-right: 0px solid !important;
+}
+
+.exe-content table td {
+    padding: 10px;
+}
+
+/* Derechos de autor */
+.exe-content .figcaption {
+    line-height: .8em !important;
+    text-align: left !important;
+}
+
+/* Accordion styles */
+
+.exe-content .exe-accordion {
+    box-shadow: rgb(0 0 0 / 50%) 0px 1px 3px !important;
+    margin: 10px 0px !important;
+    width: -webkit-fill-available !important;
+}
+
+.exe-content .fx-accordion-title {
+    background-color: #EFB734 !important;
+}
+
+.exe-content .exe-accordion h2 {
+    font-weight: 600 !important;
+}
+
+/* Buttons */
+
+.exe-content .btn, .exe-content .feedbacktooglebutton, .exe-content .exe-download-package-link a {
+    background-color: #EFB734 !important;
+    border-color: #EFB734 !important;
+}
+
+.exe-content header .btn {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+/* Columns styles */
+
+.exe-layout-2-cols, .exe-layout-3-cols {
+    display: flex;
+}
+
+.exe-layout-3-cols .exe-col {
+    width: 28% !important;
+}
+
+.exe-content .exe-layout-3-cols .exe-col-1, .exe-content .exe-layout-3-cols .exe-col-2{
+    padding-right: 3% !important;
+    margin-right: 3% !important;
+    height: -webkit-fill-available !important;
+    border-right: 1px solid #F2D89C !important;
+}
+
+/* Tabs sytles */
+
+.exe-content .exe-tabs {
+    width: 100% !important;
+}
+
+.exe-content .fx-tabs li a {
+    color: #656565 !important;
+    font-weight: bold !important;
+    background-color: #F2D89C !important;
+}
+
+.exe-content .fx-tabs .fx-current a, .exe-tabs .fx-tab-content {
+    color: white !important;
+    font-weight: bold !important;
+    background-color: #EFB734 !important;
+}
+
+/* Tips styles */
+
+.qtip-light .qtip-titlebar {
+    background-color: #EFB734 !important;
+}
+
+.qtip-light .qtip-content {
+    background-color: #F2D89C !important;
+}
+
+/* Popup style */
+
+.pp_overlay {
+    background-color: #000 !important;
+    opacity: 0.75 !important;
+}
+
+/* Line separator iDevice */
+
+.exe-content .line-separator {
+    border-bottom: 3px solid #efb734;
+    height: 0px;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+/* Goal iDevice */
+
+.exe-content .goal {
+    display: flex;
+}
+
+.exe-content .goal .exe-col {
+    display: flex;
+    /* max-width: 255px; */
+    flex-direction: column;
+    width: 23%;
+    margin-right: 1.5%;
+}
+
+.exe-content .goal .exe-col:last-child {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.exe-content .goal .goal-container {
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: #EFB734;
+    border-radius: 15px 15px 0 0;
+    font-weight: 600;
+    color: white;
+    padding: 15px;
+}
+
+.exe-content .goal .goal-container span {
+    font-size: 1.3rem;
+}
+
+.exe-content .goal .goal-container p {
+    margin-bottom: 0 !important;
+}
+
+.exe-content .goal .invisible-goal {
+    display: none;
+    background-color: #F2D89C;
+    padding: 15px;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Exe idevices games */
+
+.exe-content .idevice_node a {
+    color: #C58D09
+}
+
+.exe-content .idevice_node a:hover {
+    color: #A77809
+}
+
+.exe-content .form-control:focus, .exe-content input[type="text"]:focus, .exe-content .form-control:focus-visible, .exe-content input[type="text"]:focus-visible {
+    border-color: #EFB734 !important;
+    box-shadow: 0 0 0 .25rem rgba(239, 183, 52, .25) !important;
+    outline: 0 !important;
+}
+
+.exe-content input[type="text"]:focus, .exe-content input[type="text"]:focus-visible {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: var(--bs-body-color) !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    border: 1px solid;
+    outline: 0 !important;
+    background-color: var(--bs-body-bg) !important;
+    background-clip: padding-box !important;
+    border-radius: var(--bs-border-radius) !important;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+}
+
+/* iDevices icons */
+
+.exe-content .rosco-GameScoreBoard, .exe-content .SPP-GameScoreBoard, .exe-content .trivial-Board {
+    padding-bottom: 25px;
+    border-bottom: 2px solid #F2D89C;
+    margin-bottom: 25px; 
+}
+
+.exe-content .exeQuextIcons-Number {
+    background: url("img/almohadilla.svg") !important
+}
+
+.exe-content .exeQuextIcons-Minimize {
+    background: url("img/minimizar.svg") !important
+}
+
+.exe-content .exeQuextIcons-FullScreen {
+    background: url("img/pantalla_completa.svg") !important
+}
+
+.exe-content .exeQuextIcons-Time {
+    background: url("img/reloj.svg") !important
+}
+
+.exe-content .exeQuextIcons-RoscoCanvas {
+    background: url("img/teclado.svg") !important
+}
+
+.exe-content .exeQuextIcons-Score {
+    background: url("img/trofeo.svg") !important
+}
+
+.exe-content .exeQuextIcons-RoscoRows {
+    background: url("img/circulo_rosco.svg") !important
+}
+
+.exe-content .exeQuextIcons-TwoRounds {
+    background: url("img/2.svg") !important
+}
+
+.exe-content .exeQuextIcons-OneRound {
+    background: url("img/1.svg") !important
+}
+
+.exe-content .exeQuextIcons-MoveOne {
+    background: url("img/enter_rojo.svg") !important
+}
+
+.exe-content .exeQuextIcons-Submit {
+    background: url("img/enviar.svg") !important;
+    background-size: 100% !important
+}
+
+.exe-content .exeQuextIcons-Error {
+    background: url("img/x_rojo.svg") !important
+}
+
+.exe-content .exeQuextIcons-Hit {
+    background: url("img/check_circle_verde.svg") !important
+}
+
+.exe-content .exeQuextIcons {
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+}
+
+/* iDevices relation */
+
+.exe-content .RLCP-Word, .exe-content .RLCP-Definition {
+    background-color: #EFB734 !important;
+    border-radius: 15px !important;
+}
+
+.exe-content .RLCP-ContainerData {
+    border-radius: 10px !important;
+}
+
+.exe-content .RLCP-EText {
+    background-color: transparent !important;
+    color: #333333 !important
+}
+
+.exe-content .RLCP-ETextDinamyc {
+    font-size: 1.1rem !important;
+}
+
+.exe-content .dateRelation .RLCP-ContainerWords {
+    font-weight: 600;
+}
+
+/* iDevices Rosco */
+
+.exe-content .rosco-Main {
+    max-width: 100% !important;
+    margin-top: 50px !important;
+}
+
+.exe-content .rosco-MultimediaNeo {
+    padding-top: 0 !important;
+    display: none;
+}
+
+.exe-content .rosco-Canvas, .exe-content .rosco-Letters {
+    margin-top: 75px !important
+}
+
+.exe-content .rosco-GameContainer {
+    margin-top: 10px !important;
+}
+
+.exe-content .rosco-MainContainer {
+    flex-direction: column-reverse !important;
+}
+
+.exe-content .rosco-StartGame {
+    margin: 2em auto !important;
+}
+
+.exe-content .rosco-StartGame a {
+    background-color: #EFB734 !important;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.exe-content .rosco-StartGame a:hover {
+    background-color: #C58D09 !important;
+    color: white !important;
+}
+
+/* iDevices Test and word write*/
+
+.exe-content .SLCNP-MainContainer, .exe-content .SLCNP-GameContainer, .exe-content .CMPT-GameContainer {
+    max-width: none !important;
+    padding: 0 !important;
+}
+
+.exe-content .SLCNP-GameScoreBoard, .exe-content .CMPT-GameScoreBoard {
+    padding-bottom: 25px;
+    border-bottom: 2px solid #F2D89C;
+    margin-bottom: 25px;
+}
+
+.exe-content .SLCNP-Options {
+    border-color: rgb(119, 119, 119) !important;
+}
+
+.exe-content .SLCNP-BottonContainerDivEnd {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.exe-content .SLCNP-Answers {
+    width: auto !important;
+}
+
+.exe-content .SLCNP-Question {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.exe-content .SLCNP-Cover {
+    max-width: 349px;
+    max-height: 349.3px;
+    width: auto !important;
+}
+
+.exe-content .SLCNP-HistGGame, .exe-content .SLCNP-Images, .exe-content .SLCNP-Cover {
+    filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5))
+}
+
+/* Rubric table */
+
+.rubric #exe-rubrics-header {
+    grid-template-columns: auto !important;
+}
+
+.exe-content .rubric .exe-table {
+    overflow: hidden;
+    border-collapse: separate;
+    border-radius: 25px;
+    min-width: auto !important;
+}
+
+.exe-content .rubric thead tr {
+    background: #236FA1;
+}
+
+.exe-content .rubric thead th {
+    text-align: center;
+    color: white;
+    border: 0px solid;
+}
+
+.exe-content .rubric tbody th {
+    vertical-align: baseline;
+}
+
+.exe-content .rubric thead th:first-child {
+    border-top-left-radius: 12px !important;
+}
+
+.exe-content .rubric thead th:last-child {
+    border-top-right-radius: 12px !important;
+}
+
+.exe-content .rubric tbody tr:nth-child(odd) th, .exe-content .rubric tbody tr:nth-child(odd) td  {
+    background: #F1C40F !important;
+    border-color: #F1C40F !important;
+    line-height: normal;
+}
+
+.exe-content .rubric tbody tr:nth-child(even) th, .exe-content .rubric tbody tr:nth-child(even) td {
+    background: #FBEEB8 !important;
+    border-color: #FBEEB8 !important;
+    line-height: normal;
+}
+
+.exe-content .rubric table {
+    display: block !important;
+    overflow-x: auto !important;
+}
+
+/* Word Soup */
+
+.exe-content .SPP-Words {
+    margin-top: 20px !important;
+}
+
+.exe-content .SPP-Message {
+    color: #C58D09 !important;
+}
+
+/* Trivia Board iDevices */
+
+.exe-content .trivial-MainContainer {
+    padding: 0px !important;
+    margin: 0px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.exe-content .trivial-Board {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.exe-content .trivial-instructions {
+    font-size: 1.1rem !important;
+}
+
+.exe-content .trivial-GameQuestion, .exe-content .trivial-Board {
+    margin-top: 20px !important;
+}
+
+.exe-content .trivial-Board a {
+    position: relative !important;
+}
+
+.exe-content .trivial-GameContainer {
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.exe-content .trivial-PanelLateral {
+    margin-top: 15px !important;
+    height: auto !important;
+}
+
+.exe-content .trivial-GameContainer .exeQuextIcons {
+    width: 25px;
+    height: 25px;
+}
+
+.exe-content .trivial-Materias {
+    display: none !important;
+}
+
+.exe-content div:fullscreen .trivial-GameContainer {
+    flex-direction: row !important;
+}
+
+/* Check list */
+
+.exe-content .CTJP-Title {
+    color: #EFB734 !important;
+}
+
+.exe-content .noPoint #ctjCounter-0 {
+    display: none !important;
+}
+
+/* Float img */
+
+.exe-content .float-right {
+    margin: .5em 0 1em 2em !important;
+}
+
+/* Responsive web */
+
+@media screen and (max-width: 1400px) {
+
+    .exe-content .portada {
+        margin-top: -15px !important;
+    }
+
+    .exe-content .page-content {
+        margin-top: 0px !important;
+        padding-top: 15px !important;
+    }
+
+    body.siteNav-off button#searchBarTogger,
+    body button#searchBarTogger {
+        left: auto;
+        top: 110px !important;
+        height: 42px;
+        border-radius: 0 8px 8px 0;
+        width: 68px;
+        position: fixed;
+        z-index: 450;
+    }
+
+    .siteNav-off button#siteNavToggler span {
+        display: none;
+    }
+
+    .main-header {
+        height: 170px !important;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .exe-content .main-header::before {
+        margin-left: 0px !important;
+        margin-top: 15px !important;
+        background: url(img/logo_ref.svg) center !important;
+    }
+
+    .exe-content .package-header {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-top: 1em !important;
+    }
+
+    .exe-web-site .page-counter {
+        right: 23px;
+        top: 130px;
+    }
+
+    .exe-web-site main {
+        padding-top: 158px;
+    }
+
+    .exe-content .package-title {
+        font-size: 1.2rem !important
+    }
+
+    .exe-content .package-subtitle, .exe-content .package-title {
+        text-align: center !important;
+    }
+
+    .exe-content #siteNav {
+        margin-top: 169px !important;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+
+    .exe-content #sidebar-nav {
+        padding-top: 170px !important;
+    }
+
+    .exe-content .nav-buttons .nav-button-left, .exe-content .nav-buttons .nav-button-right {
+        width: 45px !important;
+        height: 45px !important;
+        background-position: right 10px center !important;
+        background-size: 25px !important;
+    }
+
+    .exe-content #siteNav {
+        margin-top: 0px !important;
+        padding: 16px !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .exe-content .portada {
+        margin-top: -15px !important;
+    }
+
+    .exe-content .page-content {
+        margin-top: 0px !important;
+        padding-top: 15px !important;
+    }
+
+    .exe-content #siteFooter {
+        padding-left: 0px !important;
+    }
+
+    .exe-content .goal {
+        flex-direction: column;
+    }
+
+    .exe-layout-2-cols, .exe-layout-3-cols {
+        flex-direction: column !important;
+    }
+
+    .exe-content .exe-col {
+        width: 100% !important;
+        margin-bottom: 25px;
+        margin-right: 0px !important;
+    }
+
+    .exe-content .exe-col:last-child {
+        margin-bottom: 0px !important;
+    }
+
+    .rubric .exe-rubrics-table-slot {
+        overflow: hidden !important;
+    }
+
+    .exe-web-site main {
+        padding-top: 0px;
+    }
+
+    .exe-content .float-right img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .exe-content .float-right {
+        width: 100% !important;
+        margin: 0 0 15px 0 !important;
+        float: none !important;
+    }
+
+    .exe-content .produccion .exe-col {
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        border: 0px !important;
+    }
+
+    .exe-content .float-right .figcaption {
+        margin-bottom: 15px;
+    }
+
+    .exe-content .produccion div {
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        border: 0px !important;
+    }
+
+    .exe-content .produccion br {
+        display: none;
+    }
+
+    .exe-content .actividades table {
+        border-collapse: collapse !important;
+    }
+
+    .exe-content .actividades tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .exe-content .actividades td {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    .exe-content .fx-tabs {
+        display: flex;
+    }
+
+    .exe-content table {
+        display: block !important;
+        overflow-x: auto !important;
+    }
+
+    .exe-content .referencia table {
+        display: table !important;
+        overflow-x: hidden !important;
+    }
+
+    .exe-content .exe-table-minimalist tbody, .exe-content .exe-table-minimalist tr, .exe-content .exe-table-minimalist td {
+        display: block !important;
+    }
+
+}
