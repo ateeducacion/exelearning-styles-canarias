@@ -6,11 +6,11 @@ Este repositorio lo mantiene el **[Área de Tecnología Educativa (ATE)](https:/
 
 ## Temas disponibles
 
-| Tema | Etapa / Ámbito | Lema |
-|------|----------------|------|
-| **[Flux](flux/)** | Infantil / Primaria | *Energía en movimiento* |
-| **[Nova](nova/)** | Secundaria / Bachillerato | *Aprender, crecer, avanzar* |
-| **[REF](ref/)** | Programa educativo del Régimen Económico y Fiscal de Canarias (edu-REF) | *Equilibrio y claridad* |
+| Tema | Etapa / Ámbito | Lema | Autoría |
+|------|----------------|------|---------|
+| **[Flux](flux/)** | Infantil / Primaria | *Energía en movimiento* | [3ipunt](https://tresipunt.com/) |
+| **[Nova](nova/)** | Secundaria / Bachillerato | *Aprender, crecer, avanzar* | [3ipunt](https://tresipunt.com/) |
+| **[REF](ref/)** | Programa educativo del Régimen Económico y Fiscal de Canarias (edu-REF) | *Equilibrio y claridad* | [MITCA](https://mitcastudio.com/) |
 
 ### Flux — Infantil / Primaria
 Tema de aspecto cálido y dinámico (tipografía Fredoka), pensado para el alumnado de Educación Infantil y Primaria.
